@@ -94,8 +94,8 @@ export default function CorkBoard({
 
     setTimeout(() => {
       const link = document.createElement("a");
-      link.href = "/documents/AayushVats_Resume.pdf";
-      link.download = "AayushVats_Resume.pdf";
+      link.href = "/documents/AayushVatsResume.pdf";
+      link.download = "AayushVatsResume.pdf";
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
