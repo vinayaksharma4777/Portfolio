@@ -18,7 +18,7 @@ export default function Contact({
     message: "",
   });
 
-  const MY_EMAIL = "vatsayush67@gmail.com";
+  const MY_EMAIL = "vinayaksharma4777@gmail.com";
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
@@ -262,27 +262,25 @@ export default function Contact({
 
               <div className="p-6">
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-16 h-16 bg-[#efe9b5] border-4 border-[#222] rounded-xl overflow-hidden shadow-[4px_4px_0_#ff8300]">
-                    <img
-                      src="/images/avatar_contact.jpg"
-                      alt="Avatar"
-                      className="w-full h-full object-cover bg-orange-100"
-                    />
+                  <div className="w-16 h-16 bg-[#efe9b5] border-4 border-[#222] rounded-xl overflow-hidden shadow-[4px_4px_0_#ff8300] flex items-center justify-center select-none">
+                    <span className="font-mono font-black text-2xl text-[#111] tracking-tight">
+                      VS
+                    </span>
                   </div>
                   <div>
                     <h2 className="text-xl font-black uppercase text-[#111]">
-                      Aayush Vats
+                      Vinayak Sharma
                     </h2>
                     <p className="font-semibold text-sm text-[#ff8300]">
-                      Developer • Creator
+                      Developer • Problem Solver
                     </p>
                   </div>
                 </div>
 
                 <p className="text-sm font-medium leading-relaxed text-[#444]">
-                  Passionate about full-stack development, open-source, and
-                  real-world challenges. Drop a message to collaborate on
-                  projects or just talk code!
+                  Interested in full-stack development, AI/ML, DSA, and
+                  building practical software. Drop a message to connect,
+                  collaborate, or talk about technology.
                 </p>
               </div>
             </div>

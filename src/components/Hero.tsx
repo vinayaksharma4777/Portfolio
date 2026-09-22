@@ -14,17 +14,17 @@ const Hero = ({
   started?: boolean;
 }) => {
   const tech = [
-  "Problem Solver",
-  "Full-Stack",
-  "AI Enthusiast",
-  "Cloud",
-  "Open Source",
-];
+    "Problem Solver",
+    "Full-Stack Developer",
+    "AI/ML Explorer",
+    "DSA Enthusiast",
+    "Software Engineering",
+  ];
 
   const statCards = [
     {
       title: "Current Focus",
-      value: "Full Stack + AI",
+      value: "Full-Stack + AI/ML",
     },
     {
       title: "Core Strength",
@@ -32,7 +32,7 @@ const Hero = ({
     },
     {
       title: "Building",
-      value: "Real World Apps",
+      value: "Real-World Applications",
     },
     {
       title: "Goal",
@@ -82,7 +82,7 @@ const Hero = ({
             }}
           >
             <h1 className="text-6xl md:text-6xl text-[#2a2a2a] leading-[0.95] tracking-tight font-extrabold">
-              Hi, I'm <span className="text-[#ff7e00]">Aayush</span>
+              Hi, I&apos;m <span className="text-[#ff7e00]">Vinayak</span>
               <br />
               <span className="text-[#ffce00]">Dev</span> & Creator
             </h1>
@@ -99,9 +99,10 @@ const Hero = ({
             }}
           >
             <p className="mt-8 text-xl text-gray-800 max-w-xl leading-relaxed">
-              I craft full-stack web experiences that blend thoughtful design,
-              powerful technology, and delightful interactions. I enjoy turning
-              ideas into scalable, engaging products through code.
+              I&apos;m a 3rd-year Computer Science Engineering student at Chitkara
+              University who enjoys building practical software, solving problems
+              with code, and exploring the intersection of full-stack development
+              and AI/ML.
             </p>
           </motion.div>
 

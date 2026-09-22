@@ -20,13 +20,13 @@ export default function Footer({
       <div className="mx-auto max-w-6xl flex flex-col md:flex-row items-center justify-between gap-6">
         {/* Copyright */}
         <div className="text-sm tracking-widest text-center md:text-left text-[#444]">
-          © 2026 AAYUSH VATS. <br className="md:hidden" /> ALL RIGHTS RESERVED.
+          © 2026 VINAYAK SHARMA. <br className="md:hidden" /> ALL RIGHTS RESERVED.
         </div>
 
         {/* Social Links */}
         <div className="flex items-center gap-4">
           <a
-            href="https://github.com/Aayush-0821"
+            href="https://github.com/vinayaksharma4777"
             target="_blank"
             rel="noopener noreferrer"
             onClick={()=>{
@@ -38,7 +38,7 @@ export default function Footer({
             <FaGithub size={22} />
           </a>
           <a
-            href="https://linkedin.com/in/theaayushvats"
+            href="https://www.linkedin.com/in/vinayak-sharma4777/"
             target="_blank"
             rel="noopener noreferrer"
             onClick={()=>{
@@ -50,7 +50,7 @@ export default function Footer({
             <FaLinkedin size={22} />
           </a>
           <a
-            href="mailto:vatsayush67@gmail.com"
+            href="mailto:vinayaksharma4777@gmail.com"
             onClick={()=>{
                 if(musicEnabled) playClickSound();
             }}

@@ -129,8 +129,7 @@ const About = ({ musicEnabled = false }: { musicEnabled?: boolean }) => {
           </motion.div>
 
           <span>
-            Full-stack developer • Problem Solver • Creating impactful digital
-            experiences
+            Computer Science Engineering Student • Full-Stack Developer • Problem Solver
           </span>
         </div>
       </motion.div>
@@ -179,10 +178,10 @@ const About = ({ musicEnabled = false }: { musicEnabled?: boolean }) => {
               }}
               className="mt-6 text-white text-base md:text-xl leading-relaxed font-semibold"
             >
-              I am a developer who enjoys building modern web experiences with
-              clean code, smooth animations, and thoughtful design.
-              <br />I love turning ideas into interactive products while
-              constantly learning new technologies and improving my craft.
+              I&apos;m a Computer Science Engineering student who enjoys turning
+              ideas into working software. I&apos;m focused on strengthening my
+              foundations in DSA and core computer science while building practical
+              applications with modern web technologies and exploring AI/ML.
             </motion.p>
 
             {/* BUTTONS */}
@@ -258,39 +257,39 @@ const About = ({ musicEnabled = false }: { musicEnabled?: boolean }) => {
               {[
                 {
                   name: "Frontend",
-                  level: "React & Next.js",
+                  level: "React • Vite • Tailwind",
                   icon: <Zap size={30} />,
                   power: 80,
                 },
                 {
                   name: "Backend",
-                  level: "Node.js & Express",
+                  level: "Node.js • Express",
                   icon: <Server size={30} />,
-                  power: 85,
-                },
-                {
-                  name: "DataBase",
-                  level: "MongoDB & SQL",
-                  icon: <Database size={30} />,
-                  power: 80,
-                },
-                {
-                  name: "Architecture",
-                  level: "System Design",
-                  icon: <Network size={30} />,
-                  power: 62,
-                },
-                {
-                  name: "Smart Systems",
-                  level: "AI Integration",
-                  icon: <Brain size={30} />,
                   power: 75,
                 },
                 {
-                  name: "Problem Solving",
-                  level: "DSA & Core CS",
+                  name: "Database",
+                  level: "MongoDB • MySQL • PostgreSQL",
+                  icon: <Database size={30} />,
+                  power: 75,
+                },
+                {
+                  name: "Programming",
+                  level: "Java • Python • JavaScript",
                   icon: <Cpu size={30} />,
-                  power: 85,
+                  power: 80,
+                },
+                {
+                  name: "AI / ML",
+                  level: "Exploring AI/ML & intelligent applications",
+                  icon: <Brain size={30} />,
+                  power: 70,
+                },
+                {
+                  name: "Problem Solving",
+                  level: "DSA • OOP • Core CS",
+                  icon: <Network size={30} />,
+                  power: 80,
                 },
               ].map((skill, index) => (
                 <motion.div
@@ -435,21 +434,55 @@ const About = ({ musicEnabled = false }: { musicEnabled?: boolean }) => {
 
             {/* Inner Character Frame */}
 
-            <div className="relative mt-4 rounded-[30px] border-[5px] border-[#ff8a00] h-180 overflow-hidden flex items-center justify-center">
-              <motion.img
-                src="/images/portfolio-profile.png"
+            <div className="relative mt-4 rounded-[30px] border-[5px] border-[#ff8a00] h-180 overflow-hidden flex items-center justify-center bg-[#194e3a]">
+              {/* Subtle Grid Background */}
+              <div
+                className="pointer-events-none absolute inset-0 opacity-15"
+                style={{
+                  backgroundImage:
+                    "radial-gradient(circle at 2px 2px, #fff 1px, transparent 0)",
+                  backgroundSize: "20px 20px",
+                }}
+              />
+
+              <motion.div
                 animate={{
                   x: mouse.x * 1.5,
                   y: mouse.y * 1.5,
-                  scale: 1.05,
+                  scale: 1.02,
                 }}
                 transition={{
                   type: "spring",
                   stiffness: 100,
                   damping: 15,
                 }}
-                className="w-full h-full object-contain scale-130"
-              />
+                className="flex flex-col items-center justify-center text-center p-8 z-10 select-none"
+              >
+                {/* Avatar Shield */}
+                <div className="relative mb-6">
+                  <div className="w-40 h-40 md:w-48 md:h-48 rounded-3xl bg-[#ffd064] border-4 border-[#143d32] shadow-[6px_6px_0_#143d32] flex items-center justify-center">
+                    <span className="font-mono font-black text-6xl md:text-7xl text-[#143d32] tracking-tight">
+                      VS
+                    </span>
+                  </div>
+                  <div className="absolute -bottom-3 -right-3 bg-[#06d49f] border-3 border-[#143d32] rounded-xl px-3 py-1 font-mono font-bold text-xs text-[#143d32] shadow-[2px_2px_0_#143d32]">
+                    LVL 5
+                  </div>
+                </div>
+
+                {/* Character Details */}
+                <div className="bg-[#143d32]/80 border-3 border-[#5ca88c] rounded-2xl px-6 py-4 backdrop-blur-xs shadow-[4px_4px_0_#082b22] max-w-xs">
+                  <p className="font-mono text-xs uppercase tracking-widest text-[#ffd064] font-bold">
+                    PLAYER 1 // ACTIVE
+                  </p>
+                  <h3 className="text-xl md:text-2xl font-black text-white mt-1">
+                    Vinayak Sharma
+                  </h3>
+                  <p className="text-xs font-semibold text-[#a8d5c4] mt-1">
+                    Full-Stack Developer • Problem Solver
+                  </p>
+                </div>
+              </motion.div>
 
               {/* Bottom Stats */}
 
@@ -475,7 +508,7 @@ const About = ({ musicEnabled = false }: { musicEnabled?: boolean }) => {
 
                     <span className="relative inline-flex rounded-full h-3 w-3 bg-green-600"></span>
                   </span>
-                  Avaliable for Work
+                  Available for Work
                 </div>
               </motion.div>
             </div>
@@ -514,12 +547,12 @@ const About = ({ musicEnabled = false }: { musicEnabled?: boolean }) => {
             <div className="grid grid-cols-3 gap-2 md:gap-6">
               {[
                 {
-                  value: 5,
+                  value: 3,
                   label: "PROJECTS",
                   color: "text-white",
                 },
                 {
-                  value: 19,
+                  value: 18,
                   label: "STACK",
                   color: "text-[#06d49f]",
                 },

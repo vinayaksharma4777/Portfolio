@@ -42,15 +42,15 @@ export default function CorkBoard({
   );
 
   const projects = resumeData.filter((item) => item.section === "projects");
-  const epiphany = projects.filter((p) => p.id.startsWith("project-epiphany"));
-  const epiphanyTitle = epiphany.find((p) => p.id === "project-epiphany");
-  const epiphanyStack = epiphany.find((p) => p.id === "project-epiphany-stack");
-  const epiphanyBullets = epiphany.filter((p) => /epiphany-\d/.test(p.id));
+  const neuroflux = projects.filter((p) => p.id.startsWith("project-neuroflux"));
+  const neurofluxTitle = neuroflux.find((p) => p.id === "project-neuroflux");
+  const neurofluxStack = neuroflux.find((p) => p.id === "project-neuroflux-stack");
+  const neurofluxBullets = neuroflux.filter((p) => /neuroflux-\d/.test(p.id));
 
-  const commitAi = projects.filter((p) => p.id.startsWith("project-commitai"));
-  const commitAiTitle = commitAi.find((p) => p.id === "project-commitai");
-  const commitAiStack = commitAi.find((p) => p.id === "project-commitai-stack");
-  const commitAiBullets = commitAi.filter((p) => /commitai-\d/.test(p.id));
+  const grabitgo = projects.filter((p) => p.id.startsWith("project-grabitgo"));
+  const grabitgoTitle = grabitgo.find((p) => p.id === "project-grabitgo");
+  const grabitgoStack = grabitgo.find((p) => p.id === "project-grabitgo-stack");
+  const grabitgoBullets = grabitgo.filter((p) => /grabitgo-\d/.test(p.id));
 
   const skills = resumeData.filter(
     (item) => item.section === "skills" && item.type === "tag",
@@ -58,23 +58,55 @@ export default function CorkBoard({
 
   // Group the tech-stack tags into the labelled rows the card displays.
   const techGroups: { label: string; ids: string[] }[] = [
-    { label: "Languages", ids: ["skill-java", "skill-typescript"] },
+    {
+      label: "Languages",
+      ids: ["skill-java", "skill-python", "skill-javascript", "skill-sql"],
+    },
     {
       label: "Frontend",
-      ids: ["skill-react", "skill-nextjs", "skill-tailwindcss"],
+      ids: [
+        "skill-react",
+        "skill-html5",
+        "skill-css3",
+        "skill-tailwindcss",
+        "skill-axios",
+      ],
     },
-    { label: "Backend", ids: ["skill-nodejs", "skill-express"] },
-    { label: "Database", ids: ["skill-mongodb", "skill-mysql", "skill-redis"] },
-    { label: "DevOps", ids: ["skill-docker", "skill-aws"] },
+    {
+      label: "Backend",
+      ids: [
+        "skill-nodejs",
+        "skill-express",
+        "skill-restapis",
+        "skill-jwt",
+        "skill-bcrypt",
+        "skill-multer",
+        "skill-socketio",
+      ],
+    },
+    {
+      label: "Database",
+      ids: ["skill-mongodb", "skill-mysql", "skill-postgresql"],
+    },
+    {
+      label: "Tools",
+      ids: [
+        "skill-git",
+        "skill-github",
+        "skill-postman",
+        "skill-docker",
+        "skill-linux",
+        "skill-vscode",
+      ],
+    },
     {
       label: "Core",
       ids: [
+        "skill-dsa",
+        "skill-oop",
         "skill-dbms",
         "skill-cn",
         "skill-os",
-        "skill-linux",
-        "skill-dsa",
-        "skill-oop",
       ],
     },
   ];
@@ -94,8 +126,8 @@ export default function CorkBoard({
 
     setTimeout(() => {
       const link = document.createElement("a");
-      link.href = "/documents/AayushVatsResume.pdf";
-      link.download = "AayushVatsResume.pdf";
+      link.href = "/documents/VinayakSharma.pdf";
+      link.download = "VinayakSharma.pdf";
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
@@ -377,7 +409,7 @@ export default function CorkBoard({
                 </Piece>
               </div>
 
-              {/* Project 1 — Epiphany */}
+              {/* Project 1 — NeuroFlux */}
 
               <div className="mb-6 lg:mb-4">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-0">
@@ -386,7 +418,52 @@ export default function CorkBoard({
                     mode={mode}
                     className="text-[13px] sm:text-[15px] font-bold"
                   >
-                    {epiphanyTitle?.text.split(" — ")[0]}
+                    {neurofluxTitle?.text.split(" – ")[0] ||
+                      neurofluxTitle?.text.split(" — ")[0]}
+                  </Piece>
+
+                  <Piece
+                    as="span"
+                    mode={mode}
+                    className="text-xs font-semibold sm:font-normal text-neutral-600 inline-block bg-[#ffeca1] sm:bg-transparent px-2 py-0.5 sm:px-0 sm:py-0 rounded-sm sm:rounded-none w-fit"
+                  >
+                    Live
+                  </Piece>
+                </div>
+
+                <Piece
+                  as="p"
+                  mode={mode}
+                  className="mb-1.5 sm:mb-1 text-[11px] sm:text-xs italic text-neutral-600 leading-tight"
+                >
+                  {neurofluxStack?.text}
+                </Piece>
+
+                <ul className="space-y-1 pl-4 sm:pl-5 text-[12px] sm:text-[13px] text-[#333]">
+                  {neurofluxBullets.map((bullet) => (
+                    <Piece
+                      as="li"
+                      mode={mode}
+                      key={bullet.id}
+                      className="list-disc"
+                    >
+                      {bullet.text}
+                    </Piece>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Project 2 — GrabItGo */}
+
+              <div>
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-0">
+                  <Piece
+                    as="h3"
+                    mode={mode}
+                    className="text-[13px] sm:text-[15px] font-bold"
+                  >
+                    {grabitgoTitle?.text.split(" – ")[0] ||
+                      grabitgoTitle?.text.split(" — ")[0]}
                   </Piece>
 
                   <Piece
@@ -403,54 +480,11 @@ export default function CorkBoard({
                   mode={mode}
                   className="mb-1.5 sm:mb-1 text-[11px] sm:text-xs italic text-neutral-600 leading-tight"
                 >
-                  {epiphanyStack?.text}
+                  {grabitgoStack?.text}
                 </Piece>
 
                 <ul className="space-y-1 pl-4 sm:pl-5 text-[12px] sm:text-[13px] text-[#333]">
-                  {epiphanyBullets.map((bullet) => (
-                    <Piece
-                      as="li"
-                      mode={mode}
-                      key={bullet.id}
-                      className="list-disc"
-                    >
-                      {bullet.text}
-                    </Piece>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Project 2 — Commit-AI */}
-
-              <div>
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 sm:gap-0">
-                  <Piece
-                    as="h3"
-                    mode={mode}
-                    className="text-[13px] sm:text-[15px] font-bold"
-                  >
-                    {commitAiTitle?.text.split(" — ")[0]}
-                  </Piece>
-
-                  <Piece
-                    as="span"
-                    mode={mode}
-                    className="text-xs font-semibold sm:font-normal text-neutral-600 inline-block bg-[#ffeca1] sm:bg-transparent px-2 py-0.5 sm:px-0 sm:py-0 rounded-sm sm:rounded-none w-fit"
-                  >
-                    CLI
-                  </Piece>
-                </div>
-
-                <Piece
-                  as="p"
-                  mode={mode}
-                  className="mb-1.5 sm:mb-1 text-[11px] sm:text-xs italic text-neutral-600 leading-tight"
-                >
-                  {commitAiStack?.text}
-                </Piece>
-
-                <ul className="space-y-1 pl-4 sm:pl-5 text-[12px] sm:text-[13px] text-[#333]">
-                  {commitAiBullets.map((bullet) => (
+                  {grabitgoBullets.map((bullet) => (
                     <Piece
                       as="li"
                       mode={mode}

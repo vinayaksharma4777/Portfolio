@@ -1,4 +1,4 @@
-# 🚀 Aayush's Portfolio
+# 🚀 Vinayak's Portfolio
 
 > An interactive retro-inspired developer portfolio built with Next.js.
 
@@ -7,7 +7,7 @@
 
 ## 🌐 Live Demo
 
-**Website:** https://aayushvats.me
+**Website:** TODO — Deployed Portfolio URL
 
 ---
 
@@ -64,7 +64,7 @@
 Clone the repository
 
 ```bash
-git clone https://github.com/Aayush-0821/Portfolio.git
+git clone https://github.com/vinayaksharma4777/Portfolio.git
 ```
 
 Install dependencies
@@ -99,11 +99,11 @@ Rather than relying on templates, the UI focuses on personality while maintainin
 
 ## 📬 Contact
 
-Portfolio: https://aayushvats.me
+GitHub: https://github.com/vinayaksharma4777
 
-LinkedIn: https://linkedin.com/in/theaayushvats
+LinkedIn: https://www.linkedin.com/in/vinayak-sharma4777/
 
-Email: vatsayush67@gmail.com
+Email: vinayaksharma4777@gmail.com
 
 ---
 

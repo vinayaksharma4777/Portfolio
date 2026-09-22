@@ -17,27 +17,29 @@ import { useEffect, useMemo, useRef } from "react";
 
 const skillData = {
   foundations: {
-    title: "CORE CS",
+    title: "CORE CS & AI",
     level: "Level 1 / 4",
 
     equipment: [
       "Java",
+      "Python",
       "DSA",
       "OOP",
-      "Git",
       "DBMS",
       "Operating Systems",
       "Computer Networks",
       "SQL",
+      "AI / ML",
+      "NLP",
       "Problem Solving",
-      "System Design",
+      "Software Engineering",
     ],
 
     achievements: [
       "Mastered fundamental data structures and algorithmic patterns.",
-      "Developed strong analytical and problem-solving instincts.",
+      "Developed strong analytical and problem-solving instincts in Java and Python.",
       "Built a solid foundation across core computer science subjects.",
-      "Optimized solutions through complexity-driven thinking.",
+      "Applied understanding of AI/ML concepts and NLP in hackathon innovation.",
     ],
   },
 
@@ -47,45 +49,43 @@ const skillData = {
 
     equipment: [
       "React",
-      "Next.js",
-      "TypeScript",
+      "Vite",
       "JavaScript",
       "Tailwind CSS",
-      "Framer Motion",
+      "Redux Toolkit",
       "Responsive Design",
       "Component Architecture",
-      "Accessibility",
-    ],
-
-    achievements: [
-      "Crafted modern and responsive user interfaces.",
-      "Built scalable component-driven frontend architectures.",
-      "Designed engaging user experiences with smooth interactions.",
-      "Developed visually polished applications across devices.",
-    ],
-  },
-
-  real_time_system: {
-    title: "INTERACTIVE SYSTEM",
-    level: "Level 3 / 4",
-
-    equipment: [
-      "Socket.IO",
-      "Redis",
-      "Three.js",
-      "Framer Motion",
-      "WebSockets",
-      "Real-Time Sync",
-      "Live Collaboration",
-      "Event Systems",
       "State Management",
     ],
 
     achievements: [
-      "Built highly interactive and event-driven applications.",
-      "Created immersive 3D experiences and visual interfaces.",
-      "Engineered responsive systems with real-time feedback.",
-      "Designed engaging user interactions through animation and motion.",
+      "Crafting fast, dynamic frontend user interfaces with React and Vite.",
+      "Implementing predictable global state management with Redux Toolkit.",
+      "Styling responsive, clean, modern interfaces using Tailwind CSS.",
+      "Structuring modular, reusable component hierarchies.",
+    ],
+  },
+
+  real_time_system: {
+    title: "DATABASES & TOOLS",
+    level: "Level 3 / 4",
+
+    equipment: [
+      "MongoDB",
+      "MySQL",
+      "PostgreSQL",
+      "Git",
+      "GitHub",
+      "Postman",
+      "Docker",
+      "VS Code",
+    ],
+
+    achievements: [
+      "Managing both relational (MySQL, PostgreSQL) and NoSQL (MongoDB) databases.",
+      "Practicing disciplined version control, branching, and collaboration on GitHub.",
+      "Testing, debugging, and documenting REST APIs thoroughly using Postman.",
+      "Containerizing development workflows with Docker for consistency.",
     ],
   },
 
@@ -97,19 +97,17 @@ const skillData = {
       "Node.js",
       "Express.js",
       "MongoDB",
-      "Prisma",
       "REST APIs",
-      "JWT",
-      "Redis",
-      "Docker",
-      "AWS",
+      "CRUD Operations",
+      "Middleware Design",
+      "Database Integration",
     ],
 
     achievements: [
-      "Designed scalable and maintainable server architectures.",
-      "Built secure authentication and authorization systems.",
-      "Developed robust APIs powering complex applications.",
-      "Integrated databases, cloud services, and deployment workflows.",
+      "Building scalable backend servers and microservices with Node.js and Express.",
+      "Architecting RESTful API endpoints with structured error handling.",
+      "Integrating database persistence layers for dynamic web applications.",
+      "Writing maintainable server-side logic following clean code standards.",
     ],
   },
 };
@@ -137,7 +135,7 @@ const categories = [
   },
   {
     id: "real_time_system",
-    label: "INTERACTIVE",
+    label: "DATABASES & TOOLS",
     icon: Radio,
     active:
       "bg-linear-to-r from-[#ea476d] to-[#d6496a] text-black border-[#14372b] shadow-[0_5px_0_#14372b]",

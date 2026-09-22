@@ -10,90 +10,68 @@ import {
 import { useState, useEffect } from "react";
 import { playClickSound } from "../utils/sound";
 import { FaGithub } from "react-icons/fa";
-import Image from "next/image";
 
 const projects = [
   {
-    name: "Epiphany",
-    title: "EPIPHANY",
-    tagline: "Learning & Institution Management Platform",
+    name: "NeuroFlux",
+    title: "NEUROFLUX",
+    tagline: "Full-Stack Web Application",
+    badge: "FULL-STACK // MERN",
+    techSummary: "React • Node.js • Express • MongoDB",
 
     description:
-      "A full-stack platform that simplifies academic and administrative management for educational institutions.",
+      "A full-stack web application built with React, Node.js, Express.js and MongoDB.",
 
-    image: "/images/epiphany.png",
-
-    github: "https://github.com/Aayush-0821/Epiphany",
-    live: "https://epiphany-client.vercel.app/",
+    github: "",
+    live: "https://neuroflux-frontend-r0sz.onrender.com",
 
     points: [
-      "Centralized management for institutes, students, batches, and administrators.",
-      "Implemented secure role-based authentication with protected workflows.",
-      "Designed a modular backend architecture for scalability and maintainablity.",
-      "Reduced manual coordination by unifying academic workflows.",
+      "Full-stack web application built with React on the frontend.",
+      "Backend architecture developed with Node.js and Express.js REST APIs.",
+      "Database management and schema modeling implemented with MongoDB.",
+      "Engineered for modularity, clean code structure, and reliable performance.",
     ],
   },
 
   {
-    name: "Commit-AI",
-    title: "COMMIT-AI",
-    tagline: "AI Powered Git Workflow CLI",
+    name: "GrabItGo",
+    title: "GRABITGO",
+    tagline: "Blinkit-Inspired Grocery & E-Commerce Frontend",
+    badge: "FRONTEND // REDUX",
+    techSummary: "React • Vite • Tailwind CSS • Redux",
 
     description:
-      "An AI-powered CLI that automates the complete Git workflow from commit generation to pull requests.",
+      "A Blinkit-inspired grocery and e-commerce frontend built with React, Vite, Tailwind CSS and Redux Toolkit.",
 
-    image: "/images/commit-ai.png",
-
-    github: "https://github.com/Aayush-0821/commit-ai",
-    live: "https://www.npmjs.com/package/@aayush0821/commit-ai",
-
-    points: [
-      "Analyzes Git diffs to generate conventional commit messages using AI.",
-      "Automatically creates pull request titles and detailed descriptions.",
-      "Supports intelligent branch creation, switching, and safe Git operations.",
-      "Automates commit, push, and GitHub PR creation with a single command.",
-    ],
-  },
-
-  {
-    name: "Trackio",
-    title: "TRACKIO",
-    tagline: "Collaborative AI Learning Platform",
-
-    description:
-      "A collaborative learning platform that combines AI, progress tracking, and gamification.",
-
-    image: "/images/trackio.png",
-
-    github: "https://github.com/Aayush-0821/Trackio",
-    live: "https://trackio-byti.vercel.app/",
-
-    points: [
-      "Create and manage collaborative learning groups around specific skills.",
-      "Track progress through shared roadmaps and personalized dashboards.",
-      "Maintain learning streaks and share resources within study groups.",
-      "Encourages consistent learning through social accountability and gamification.",
-    ],
-  },
-
-  {
-    name: "Portfolio",
-    title: "PORTFOLIO",
-    tagline: "Interactive 3D Developer Portfolio",
-
-    description:
-      "A retro-inspired portfolio that blends immersive 3D experiences with handcrafted interactions.",
-
-    image: "/images/portfolio.png",
-
-    github: "https://github.com/Aayush-0821/Portfolio",
+    github: "",
     live: "",
 
     points: [
-      "Designed a fully custom retro operating system-inspired interface.",
-      "Integrated interactive 3D scenes using React Three Fiber.",
-      "Built polished animations and micro-interactions with Framer Motion.",
-      "Optimized rendering performance while maintaining a smooth user experience.",
+      "Interactive grocery and e-commerce user interface inspired by Blinkit.",
+      "Fast frontend development and asset bundling configured with Vite.",
+      "Centralized cart and application state managed using Redux Toolkit.",
+      "Responsive and modern component styling designed with Tailwind CSS.",
+    ],
+  },
+
+  {
+    name: "RURAL GUARDIAN",
+    title: "RURAL GUARDIAN: AI BOT TO DETECT FAKE NEWS AND SCAMS IN RURAL MESSAGING",
+    tagline: "AI Bot to Detect Fake News and Scams in Rural Messaging",
+    badge: "AI/ML // HACKATHON",
+    techSummary: "AI/ML • Python • NLP • Smart Bharat",
+
+    description:
+      "An AI-powered Smart India Hackathon project focused on detecting fake news and scams in rural messaging, with a focus on text/voice verification and local-language accessibility.",
+
+    github: "",
+    live: "",
+
+    points: [
+      "Smart India Hackathon project addressing rural misinformation and scams.",
+      "AI/ML and NLP powered solution tailored for messaging platforms.",
+      "Focus on text and voice verification for accessible rural communication.",
+      "Designed to support local-language interaction and usability.",
     ],
   },
 ];
@@ -163,8 +141,8 @@ export default function Projects({
 }:{
   musicEnabled:boolean;
 }) {
-  const [selected, setSelected] = useState(3);
-  const [activeProject, setActiveProject] = useState(3);
+  const [selected, setSelected] = useState(0);
+  const [activeProject, setActiveProject] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
   const [pendingProject, setPendingProject] = useState<number | null>(null);
 
@@ -496,55 +474,83 @@ export default function Projects({
                 >
                   {/* TOP ROW */}
                   <div className="grid gap-6 grid-cols-1 lg:grid-cols-[minmax(0,1fr)_300px]">
-                    {/* Project Image */}
+                    {/* Project Visual Graphic */}
                     <motion.div
                       initial="rest"
                       whileHover="hover"
                       animate="rest"
-                      className="group relative h-52 md:h-52 overflow-hidden rounded-2xl border-4 border-[#222] bg-[#efe9b5] shadow-[0_6px_0_#222]"
+                      className="group relative h-52 md:h-52 overflow-hidden rounded-2xl border-4 border-[#222] bg-[#143d32] shadow-[0_6px_0_#222] flex flex-col justify-between p-5 select-none"
                     >
-                      <Image
-                        src={current.image}
-                        alt={current.title}
-                        fill
-                        className="object-cover"
+                      {/* Grid / CRT Overlay */}
+                      <div
+                        className="pointer-events-none absolute inset-0 opacity-15"
+                        style={{
+                          backgroundImage:
+                            "radial-gradient(circle at 1px 1px, rgba(255,255,255,.25) 1px, transparent 0)",
+                          backgroundSize: "12px 12px",
+                        }}
                       />
 
+                      {/* Header in Preview */}
+                      <div className="relative z-10 flex items-center justify-between">
+                        <span className="border-2 border-[#fff7b3]/40 bg-[#0e2c24] px-2.5 py-1 rounded-md text-[10px] font-mono font-bold tracking-wider text-[#fff7b3]">
+                          {current.badge}
+                        </span>
+                        <div className="flex gap-1.5">
+                          <div className="h-2 w-2 rounded-full bg-[#ff7a00]" />
+                          <div className="h-2 w-2 rounded-full bg-[#fff7b3]" />
+                          <div className="h-2 w-2 rounded-full bg-[#06d59f]" />
+                        </div>
+                      </div>
+
+                      {/* Center Project Name Display */}
+                      <div className="relative z-10 my-auto text-center">
+                        <span className="font-mono text-[10px] sm:text-xs text-[#06d59f] tracking-widest uppercase block mb-1">
+                          // PROJECT DOSSIER
+                        </span>
+                        <h3 className="text-2xl sm:text-3xl font-black uppercase tracking-wider text-transparent bg-clip-text bg-linear-to-r from-white via-[#fff7b3] to-white drop-shadow-[2px_2px_0_#05231c]">
+                          {current.name.toUpperCase()}
+                        </h3>
+                      </div>
+
+                      {/* Footer in Preview */}
+                      <div className="relative z-10 flex items-center justify-between border-t border-white/15 pt-2 font-mono text-[10px] sm:text-[11px] text-[#cdd6cf]">
+                        <span className="truncate mr-2">{current.techSummary}</span>
+                        <span className="shrink-0 text-[#ffd100]">ACTIVE</span>
+                      </div>
+
                       {/* Github Link */}
-                      <a
-                        href={current.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="
-    absolute
-    top-3
-    right-3
-    z-20
-
-    flex
-    items-center
-    justify-center
-
-    h-10
-    w-10
-
-    rounded-lg
-    bg-black/75
-    backdrop-blur-sm
-    text-white
-
-    opacity-100
-    md:opacity-0
-    md:-translate-y-3
-    md:group-hover:opacity-100
-    md:group-hover:translate-y-0
-
-    transition-all
-    duration-300
-  "
-                      >
-                        <FaGithub size={20} />
-                      </a>
+                      {current.github && (
+                        <a
+                          href={current.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="
+                            absolute
+                            top-3
+                            right-3
+                            z-20
+                            flex
+                            items-center
+                            justify-center
+                            h-10
+                            w-10
+                            rounded-lg
+                            bg-black/75
+                            backdrop-blur-sm
+                            text-white
+                            opacity-100
+                            md:opacity-0
+                            md:-translate-y-3
+                            md:group-hover:opacity-100
+                            md:group-hover:translate-y-0
+                            transition-all
+                            duration-300
+                          "
+                        >
+                          <FaGithub size={20} />
+                        </a>
+                      )}
                     </motion.div>
 
                     {/* Name + Description */}
@@ -560,25 +566,19 @@ export default function Projects({
                         {current.description}
                       </p>
 
-                      <motion.button
-                        onClick={() => {
-                          if(musicEnabled) playClickSound();
-
-                          if (current.name === "Portfolio") {
-                            window.location.reload();
-                            return;
-                          }
-
-                          if (current.live) {
-                            window.open(current.live,"_blank","noopener,noreferrer");
-                          }
-                        }}
-                        className="mt-2 w-fit rounded-lg border-4 border-[#333] bg-[#ff6b6b] px-6 py-3 font-black text-white shadow-[0_5px_0_#222] hover:-translate-y-1 active:translate-y-1 active:shadow-none transition-all duration-200 cursor-pointer"
-                      >
-                        <div className="flex gap-2 items-center">
-                          VIEW PROJECT <ExternalLink size={18} />
-                        </div>
-                      </motion.button>
+                      {current.live && (
+                        <motion.button
+                          onClick={() => {
+                            if (musicEnabled) playClickSound();
+                            window.open(current.live, "_blank", "noopener,noreferrer");
+                          }}
+                          className="mt-2 w-fit rounded-lg border-4 border-[#333] bg-[#ff6b6b] px-6 py-3 font-black text-white shadow-[0_5px_0_#222] hover:-translate-y-1 active:translate-y-1 active:shadow-none transition-all duration-200 cursor-pointer"
+                        >
+                          <div className="flex gap-2 items-center">
+                            VIEW PROJECT <ExternalLink size={18} />
+                          </div>
+                        </motion.button>
+                      )}
                     </div>
                   </div>
 

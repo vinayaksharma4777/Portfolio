@@ -15,20 +15,21 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Aayush Vats | Portfolio",
-  description: "Full Stack Developer Portfolio",
+  title: "Vinayak Sharma | Portfolio",
+  description:
+    "Vinayak Sharma — 3rd Year Computer Science Engineering student at Chitkara University, developer focused on full-stack development, DSA, AI/ML and software engineering.",
 
   openGraph: {
-    title: "Aayush Vats | Portfolio",
-    description: "Full Stack Developer Portfolio",
-    images: ["/og-image2.png"],
+    title: "Vinayak Sharma | Portfolio",
+    description:
+      "Vinayak Sharma — 3rd Year Computer Science Engineering student at Chitkara University, developer focused on full-stack development, DSA, AI/ML and software engineering.",
   },
 
   twitter: {
-    card: "summary_large_image",
-    title: "Aayush Vats | Portfolio",
-    description: "Full Stack Developer Portfolio",
-    images: ["/og-image2.png"],
+    card: "summary",
+    title: "Vinayak Sharma | Portfolio",
+    description:
+      "Vinayak Sharma — 3rd Year Computer Science Engineering student at Chitkara University, developer focused on full-stack development, DSA, AI/ML and software engineering.",
   },
 };
 
